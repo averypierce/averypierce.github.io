@@ -1,0 +1,80 @@
+---
+layout: post
+title:  "Arc Reactor v2"
+date:   2014-10-25 12:04:21 -0800
+categories: electronics attiny arcreactor
+---
+My original arc reactor costume was alright for what it was, being made of spare parts and all, but there was a lot of room for improvement. The battery was too big, and the lighting color wasn't quite right.
+v2 uses an aTtiny85 microcontroller to drive 2 RGB LEDs, giving precise control over the color.
+
+
+![My helpful screenshot]({{ "/assets/arcReactor/v2/four.jpg" | absolute_url }})
+
+Increased reflectivity from the mirror let me use only 2 LEDs
+![My helpful screenshot]({{ "/assets/arcReactor/v2/six.jpg" | absolute_url }})
+
+All powered by a single coin cell! no more big battery pack
+![My helpful screenshot]({{ "/assets/arcReactor/v2/five.jpg" | absolute_url }})
+
+Here's the arduino code:
+
+{% highlight c %}
+const int redPin = 0; 
+const int grnPin = 1;
+const int bluPin = 2;
+const int button = 3;
+
+//Coin cell   bluemode is 6ma, red is 9ma   3volts    = 40 hours in blue, 26 for red
+//3 aaas, blue mode is 30ma, red is 20ma    3.9 volts  = 30 days blue mode, 45 days red mode
+int buttonState = 0;
+
+void setup(){
+  pinMode(redPin, OUTPUT);    
+  pinMode(grnPin, OUTPUT);    
+  pinMode(bluPin, OUTPUT);
+  pinMode(button, INPUT);
+  digitalWrite(button,HIGH);
+  digitalWrite(bluPin, HIGH);
+  digitalWrite(redPin, HIGH);
+  digitalWrite(grnPin, HIGH);
+}
+
+void loop(){
+  delay(400);
+  buttonState = digitalRead(button);
+  //Standard
+  while (buttonState == HIGH){
+      digitalWrite(redPin,LOW);
+      digitalWrite(grnPin,LOW);
+      digitalWrite(bluPin,LOW);
+      buttonState = digitalRead(button);
+  }
+  delay(400);
+  buttonState = digitalRead(button);
+  //War Machine
+  while (buttonState == HIGH){
+    digitalWrite(redPin,LOW);
+    digitalWrite(grnPin,HIGH);
+    digitalWrite(bluPin,HIGH);
+    buttonState = digitalRead(button);
+  }
+   delay(400);
+   buttonState = digitalRead(button);
+
+  //Off
+  delay(400);
+  buttonState = digitalRead(button);
+  while(buttonState == HIGH){
+    digitalWrite(redPin,HIGH);
+    digitalWrite(grnPin,HIGH);
+    digitalWrite(bluPin,HIGH);
+    buttonState = digitalRead(button);
+  }  
+}
+ 
+{% endhighlight %}
+
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/

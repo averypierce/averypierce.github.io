@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "Arc Reactor v3"
+date:   2017-10-25 12:04:21 -0800
+categories: electronics attiny arcreactor
+---
+For v3 I wanted to 3D print a fancy enclosure and make the electronics more tidy. 
+
+![My helpful screenshot]({{ "/assets/arcReactor/v3/one.jpg" | absolute_url }})
+
+![My helpful screenshot]({{ "/assets/arcReactor/v3/three.jpg" | absolute_url }})
+
+![My helpful screenshot]({{ "/assets/arcReactor/v3/two.jpg" | absolute_url }})
+
+

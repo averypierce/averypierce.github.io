@@ -1,0 +1,35 @@
+---
+layout: post
+title:  "Arc Reactor v1"
+date:   2013-10-25 12:04:21 -0800
+categories: electronics attiny arcreactor
+---
+It was the night before halloween and I needed a costume. I sat in my dimly lit room, looked through my box of scraps from old projects, and came up with this-
+an undershirt arc reactor for a low profile Tony Stark costume:
+
+![My helpful screenshot]({{ "/assets/arcReactor/v1/one.jpg" | absolute_url }})
+
+---
+I didn't want to solder wires directly to batteries, so I used pennies as contact points.
+
+![My helpful screenshot]({{ "/assets/arcReactor/v1/two.jpg" | absolute_url }})
+
+
+---
+Nothing fancy. Three LEDs wired together in series with no resistors. Lined with chrome duct tape to get more light out the front and hold everything together.
+
+![My helpful screenshot]({{ "/assets/arcReactor/v1/three.jpg" | absolute_url }})
+
+---
+
+parts list:
+* small folgers coffee lid
+* paper plate
+* chrome duct tape
+* 3 blue LEDs
+* wiring
+* 8 AA batteries
+* lots of hot glue 
+![My helpful screenshot]({{ "/assets/arcReactor/v1/five.jpg" | absolute_url }})
+
+---
